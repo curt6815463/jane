@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Header from "./Headers";
 import { Button, TextField } from "@mui/material";
 import { styled as muiStyled } from "@mui/material/styles";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const StyledLogin = styled.div`
   display: flex;
@@ -35,11 +35,11 @@ const StyledInput = muiStyled(TextField)(() => {
 }) as typeof TextField;
 
 const Login = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("Jane");
   const [password, setPassword] = useState("ji3vu3cj0su3");
   return (
     <StyledLogin>
-      <Header></Header>
       <FormWrapper>
         <StyledInput
           value={name}
@@ -66,6 +66,9 @@ const Login = () => {
             "&:hover": { backgroundColor: "#f199a9" },
           }}
           variant="contained"
+          onClick={() => {
+            navigate("/intro");
+          }}
         >
           登入
         </Button>

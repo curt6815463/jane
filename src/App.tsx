@@ -3,6 +3,8 @@ import { Normalize } from "styled-normalize";
 import Login from "./Login";
 
 import { createGlobalStyle } from "styled-components";
+import Header from "./Headers";
+import Intro from "./Intro";
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -16,8 +18,8 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/",
-    element: <div>Hello world!</div>,
+    path: "/intro",
+    element: <Intro />,
   },
   {
     path: "/test",
@@ -29,6 +31,7 @@ function App() {
     <>
       <GlobalStyle />
       <Normalize />
+      <Header />
       <RouterProvider router={router} />
     </>
   );
