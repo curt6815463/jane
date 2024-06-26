@@ -3,7 +3,7 @@ import { Button, TextField } from "@mui/material";
 import { styled as muiStyled } from "@mui/material/styles";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import loveBg from "./assets/iloveyou.jpeg";
 const StyledLogin = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,6 +15,12 @@ const FormWrapper = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+`;
+
+const ImageWrapper = styled.div`
+  img {
+    width: 100%;
+  }
 `;
 
 const StyledInput = muiStyled(TextField)(() => {
@@ -31,15 +37,22 @@ const StyledInput = muiStyled(TextField)(() => {
       borderBottomColor: "rgba(0, 0, 0, 0.6);",
     },
     "& .MuiInput-underline:after": { borderBottomColor: "rgba(0, 0, 0, 0.6);" },
+    "& .MuiFormHelperText-filled": {
+      fontSize: "20px",
+    },
   };
 }) as typeof TextField;
 
 const Login = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("Jane");
-  const [password, setPassword] = useState("ji3vu3cj0su3");
+  const [password, setPassword] = useState("");
+  const [errorText, setErrorText] = useState("");
   return (
     <StyledLogin>
+      <ImageWrapper>
+        <img src={loveBg}></img>
+      </ImageWrapper>
       <FormWrapper>
         <StyledInput
           value={name}
@@ -50,8 +63,13 @@ const Login = () => {
           fullWidth={true}
         />
         <StyledInput
+          error={Boolean(errorText)}
+          helperText={errorText}
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setErrorText("");
+            setPassword(e.target.value);
+          }}
           id="standard-basic"
           label="Password"
           variant="standard"
@@ -67,7 +85,12 @@ const Login = () => {
           }}
           variant="contained"
           onClick={() => {
-            navigate("/intro");
+            const result = /^iloveyou$/gi.test(password.replace(/\s*/g, ""));
+            if (result) {
+              navigate("/intro");
+            } else {
+              setErrorText("密碼不對哦 小淘氣");
+            }
           }}
         >
           登入

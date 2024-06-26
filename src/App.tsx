@@ -5,10 +5,12 @@ import Login from "./Login";
 import { createGlobalStyle } from "styled-components";
 import Header from "./Headers";
 import Intro from "./Intro";
+import VideoShow from "./VideoShow";
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
     height: 100%;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
   }
 `;
 
@@ -22,8 +24,8 @@ const router = createBrowserRouter([
     element: <Intro />,
   },
   {
-    path: "/test",
-    element: <div>test</div>,
+    path: "/video",
+    element: <VideoShow />,
   },
 ]);
 function App() {
