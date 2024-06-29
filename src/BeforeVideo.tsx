@@ -12,14 +12,6 @@ const P3 = styled(P)`
   text-indent: 40px;
 `;
 
-const P4 = styled(P)`
-  padding: 0px;
-  text-align: center;
-  font-size: 24px;
-  margin-top: -30px;
-  color: #f199a9;
-`;
-
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -35,8 +27,8 @@ const BeforeVideo = () => {
       </P3>
       <P3>
         我也不是很會唱歌，請妳忍耐一下 哈哈，準備好了就往下吧！這首歌名叫：
+        <span style={{ color: "#f199a9" }}>我喜歡你</span>
       </P3>
-      <P4>我喜歡你</P4>
       <ButtonWrapper>
         <Button
           sx={{

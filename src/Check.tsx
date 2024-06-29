@@ -51,7 +51,7 @@ const Check = () => {
             }}
             variant="contained"
             onClick={() => {
-              navigate("/check");
+              navigate("/login");
             }}
           >
             No
@@ -70,7 +70,7 @@ const Check = () => {
           }}
           variant="contained"
           onClick={() => {
-            navigate("/check");
+            navigate("/login");
           }}
         >
           Yes
