@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Normalize } from "styled-normalize";
 import Login from "./Login";
 
@@ -18,39 +18,36 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    {
-      path: "/before-intro",
-      element: <BeforeIntro />,
-    },
-    {
-      path: "/intro",
-      element: <Intro />,
-    },
-    {
-      path: "/before-video",
-      element: <BeforeVideo />,
-    },
-    {
-      path: "/video",
-      element: <VideoShow />,
-    },
-    {
-      path: "/before-check",
-      element: <BeforeCheck />,
-    },
-    {
-      path: "/check",
-      element: <Check />,
-    },
-  ],
-  { basename: "/jane" }
-);
+const router = createHashRouter([
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/before-intro",
+    element: <BeforeIntro />,
+  },
+  {
+    path: "/intro",
+    element: <Intro />,
+  },
+  {
+    path: "/before-video",
+    element: <BeforeVideo />,
+  },
+  {
+    path: "/video",
+    element: <VideoShow />,
+  },
+  {
+    path: "/before-check",
+    element: <BeforeCheck />,
+  },
+  {
+    path: "/check",
+    element: <Check />,
+  },
+]);
 function App() {
   return (
     <>
