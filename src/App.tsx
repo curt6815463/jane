@@ -6,6 +6,7 @@ import { createGlobalStyle } from "styled-components";
 import Header from "./Headers";
 import Intro from "./Intro";
 import VideoShow from "./VideoShow";
+import BeforeIntro from "./BeforeIntro";
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/before-intro",
+    element: <BeforeIntro />,
   },
   {
     path: "/intro",

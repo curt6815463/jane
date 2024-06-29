@@ -1,15 +1,11 @@
 import styled from "styled-components";
-import audioSrc from "./assets/testaudio.m4a";
+import audioSrc from "./assets/jane-record.m4a";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-const P1 = styled.div`
-  font-size: 28px;
-  padding: 20px;
-`;
 
 const P = styled.div`
   font-size: 20px;
-  padding: 20px;
+  padding: 0 20px;
   line-height: 28px;
 `;
 
@@ -22,19 +18,25 @@ const ButtonWrapper = styled.div`
   justify-content: center;
 `;
 
+const AudioWrapper = styled.div`
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 const Intro = () => {
   const navigate = useNavigate();
 
   return (
     <div style={{ fontSize: "18px", paddingBottom: "30px" }}>
-      <P1>
-        Dear <span style={{ color: "#f199a9" }}>Jane</span>:
-      </P1>
-      <audio controls>
-        <source src={audioSrc} type="audio/mp4" />
-      </audio>
+      <AudioWrapper>
+        <audio controls>
+          <source src={audioSrc} type="audio/mp4" />
+        </audio>
+      </AudioWrapper>
+      <div>（以下為逐字稿）</div>
       <P3>
-        在知道結果之前，有些話想說，今天是我們相識的第73天，從這段時間的相處，覺得妳是很酷的人，
+        今天是我們相識的第73天，從這段時間的相處，覺得妳是很酷的人，
         因為在一些事情上有時我以為女生都是這麼想，但妳卻沒有，
         這對我來說很棒，因為之前可能把女生想得很壞ＸＤ，但也可能是我認識的女生太少。
       </P3>

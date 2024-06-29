@@ -87,7 +87,7 @@ const Login = () => {
           onClick={() => {
             const result = /^iloveyou$/gi.test(password.replace(/\s*/g, ""));
             if (result) {
-              navigate("/intro");
+              navigate("/before-intro");
             } else {
               setErrorText("密碼不對哦 小淘氣");
             }
