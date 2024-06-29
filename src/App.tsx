@@ -7,6 +7,7 @@ import Header from "./Headers";
 import Intro from "./Intro";
 import VideoShow from "./VideoShow";
 import BeforeIntro from "./BeforeIntro";
+import BeforeVideo from "./BeforeVideo";
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/intro",
     element: <Intro />,
+  },
+  {
+    path: "/before-video",
+    element: <BeforeVideo />,
   },
   {
     path: "/video",

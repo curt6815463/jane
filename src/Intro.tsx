@@ -81,7 +81,7 @@ const Intro = () => {
           }}
           variant="contained"
           onClick={() => {
-            navigate("/video");
+            navigate("/before-video");
           }}
         >
           Next
