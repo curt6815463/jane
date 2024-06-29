@@ -8,6 +8,8 @@ import Intro from "./Intro";
 import VideoShow from "./VideoShow";
 import BeforeIntro from "./BeforeIntro";
 import BeforeVideo from "./BeforeVideo";
+import BeforeCheck from "./BeforeCheck";
+import Check from "./Check";
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
   {
     path: "/video",
     element: <VideoShow />,
+  },
+  {
+    path: "/before-check",
+    element: <BeforeCheck />,
+  },
+  {
+    path: "/check",
+    element: <Check />,
   },
 ]);
 function App() {

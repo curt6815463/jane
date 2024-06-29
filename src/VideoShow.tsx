@@ -47,7 +47,9 @@ const VideoShow = () => {
             "&:hover": { backgroundColor: "#f199a9" },
           }}
           variant="contained"
-          onClick={() => {}}
+          onClick={() => {
+            navigate("/before-check");
+          }}
         >
           Next
         </Button>
